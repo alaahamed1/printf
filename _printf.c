@@ -1,0 +1,43 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * _printf - Custom Printf Function
+ * @format: string formated
+ * @Return: 0 on success or -1 on Error
+ */
+
+int _printf(const char *format, ...){
+	va_list args;
+	int i;
+	int len = 0;
+	char test;
+
+	va_start(args, format);
+
+	for (i = 0; format[i] != '\0'; i++){
+
+		if (format[i] == '%'){
+			test = format[++i];
+			if (test == 'c')
+			{
+				len += _putchar(va_arg(args, int));
+			}
+			else if (test == 's')
+			{
+				len += _put(va_arg(args, char *));
+			}
+			else if (test == '%')
+			{
+				len += _putchar('%');
+			}
+		}
+		else
+		{
+			len += _putchar(format[i]);
+		}
+	}
+
+	va_end(args);
+	return (len);
+}
