@@ -28,7 +28,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			test = format[++i];
-			if (test == 'c')
+			if (test == '\0')
+            {
+                break;
+            }
+			else if (test == 'c')
 			{
 				len += _putchar(va_arg(args, int));
 			}
