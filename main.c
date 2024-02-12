@@ -4,9 +4,9 @@
  * Return: Always 0
  */
 
-int main()
+int main(void)
 {
 	_printf("alaa %c %s %%", 'M', "nour");
 
-	return 0;
+	return (0);
 }

@@ -9,7 +9,7 @@ int _put(char *str)
 {
 	int len = 0;
 
-	while(*str)
+	while (*str)
 	{
 		len += _putchar(*str++);
 	}

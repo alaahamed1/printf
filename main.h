@@ -9,7 +9,7 @@
 
 
 
-int _printf(const char *format,...);
+int _printf(const char *format, ...);
 int _put(char *str);
 int _putchar(char c);
 

@@ -7,7 +7,8 @@
  * @Return: 0 on success or -1 on Error
  */
 
-int _printf(const char *format, ...){
+int _printf(const char *format, ...)
+{
 	va_list args;
 	int i;
 	int len = 0;
@@ -15,9 +16,11 @@ int _printf(const char *format, ...){
 
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++){
+	for (i = 0; format[i] != '\0'; i++)
+	{
 
-		if (format[i] == '%'){
+		if (format[i] == '%')
+		{
 			test = format[++i];
 			if (test == 'c')
 			{
