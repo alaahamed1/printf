@@ -7,6 +7,7 @@
  * @format: string formated
  * Return: 0 on success or -1 on Error
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -41,6 +42,10 @@ int _printf(const char *format, ...)
 			else if (test == '%')
 			{
 				len += _putchar('%');
+			}
+			else if (test == ' ')
+			{
+				len += _putchar(' ');
 			}
 		}
 		else
