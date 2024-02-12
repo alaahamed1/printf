@@ -14,8 +14,7 @@ int main(void)
 	printf(NULL);
 	printf("%s","after printf");
 		*/
-	_printf("%");
-	printf("%");
+	_printf("%qlaa\n");
 
 
 
