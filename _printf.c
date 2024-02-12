@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i;
 	int len = 0;
-	char test;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -24,21 +23,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			test = format[++i];
-			if (test == '\0')
+			if (format[++i] == '\0')
 			{
 				va_end(args);
 				return (len);
 			}
-			else if (test == 'c')
+			else if (format[++i] == 'c')
 			{
 				len += _putchar(va_arg(args, int));
 			}
-			else if (test == 's')
+			else if (format[++i] == 's')
 			{
 				len += _put(va_arg(args, char *));
 			}
-			else if (test == '%')
+			else if (format[++i] == '%')
 			{
 				len += _putchar('%');
 			}
