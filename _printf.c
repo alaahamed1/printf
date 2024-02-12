@@ -14,17 +14,14 @@ int _printf(const char *format, ...)
 	int i;
 	int len = 0;
 	char test;
-
 	va_start(args, format);
 	if (format == NULL)
 	{
 		errno = EINVAL;
 		return (-1);
 	}
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
-
 		if (format[i] == '%')
 		{
 			test = format[++i];
