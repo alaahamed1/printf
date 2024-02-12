@@ -9,6 +9,10 @@ int _put(char *str)
 {
 	int len = 0;
 
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	while (*str)
 	{
 		len += _putchar(*str++);
