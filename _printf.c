@@ -4,7 +4,7 @@
 /**
  * _printf - Custom Printf Function
  * @format: string formated
- * @Return: 0 on success or -1 on Error
+ * Return: 0 on success or -1 on Error
  */
 
 int _printf(const char *format, ...)
