@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			return -1;
 			test = format[++i];
 			if (test == '\0')
 			{
@@ -42,10 +43,6 @@ int _printf(const char *format, ...)
 			else if (test == '%')
 			{
 				len += _putchar('%');
-			}
-			else if (test == ' ')
-			{
-				len += _putchar(' ');
 			}
 		}
 		else
