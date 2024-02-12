@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 	{
 		errno = EINVAL;
-        return -1;
+		return (-1);
 	}
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -29,9 +29,10 @@ int _printf(const char *format, ...)
 		{
 			test = format[++i];
 			if (test == '\0')
-            {
-                break;
-            }
+			{
+				va_end(args);
+				return (len);
+			}
 			else if (test == 'c')
 			{
 				len += _putchar(va_arg(args, int));
